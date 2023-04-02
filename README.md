@@ -52,7 +52,55 @@ barrage_video_website/
 * routers : 路由逻辑处理  
 * serializer : 将数据序列化为 json 的函数(序列化器)      
 * service : 接口函数的实现(业务逻辑)  
-* tmp : 热加载包         
+* tmp : 热加载包
+
+## 配置文件
+配置文件在conf/config.ini.example中，把.example去掉，然后根据自己的情况配置就好了
+
+**conf/config.ini**
+```ini
+# debug开发模式,release生产模式
+[service]
+AppMode = debug
+HttpPort = :4000
+# 运行端口号 4000端口
+
+[redis]
+RedisDB = redis
+RedisAddr = 
+# redis ip地址和端口号
+RedisPassword = 
+# redis 密码
+RedisDBName = 0
+# redis 名字
+
+[mysql]
+DB = mysql
+DBHost =
+# mysql ip地址
+DBPort = 
+# mysql 端口号
+DBUser = 
+# mysql 用户名
+DBPassword = 
+# mysql 密码
+DBName = 
+# mysql 名字
+
+[jwt]
+JWTSecret = barragevideo
+#jwt 用户鉴权密钥
+AdminJWTSecret=
+#jwt 管理员鉴权密钥
+TokenExpiredTime =
+#Token过期时间
+```
+
+
+## 简要说明
+1. `mysql`是存储主要数据
+2. `redis`用来存储视频浏览次数、评论回复数、搜索记录
+        
 
 ## 项目运行  
 **此项目使用Go Mod管理依赖。**    
