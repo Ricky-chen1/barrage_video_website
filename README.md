@@ -12,10 +12,12 @@
 * 2.视频搜索功能(mysql模糊搜索实现)
 
 ## 项目主要依赖  
-* Gin  
-* Gorm  
+* Gin 
+* Gorm
+* ini  
 * Mysql
-* redis  
+* redis
+* cron  
 * jwt-go  
 
 ## 项目结构  
@@ -43,8 +45,10 @@ barrage_video_website/
 * controllers : 用于定义接口函数
 * dao : mysql数据库交互    
 * middleware : 应用中间件    
-* model : 应用数据库模型  
-* pkg : 包  
+* model : 应用数据库模型 
+* pkg\errno : 错误码和错误信息封装
+* pkg\tasks : 任务实现,如定时任务 
+* pkg\util : 工具函数实现  
 * routers : 路由逻辑处理  
 * serializer : 将数据序列化为 json 的函数(序列化器)      
 * service : 接口函数的实现(业务逻辑)  
@@ -55,4 +59,4 @@ barrage_video_website/
 ### 下载依赖    
 `go mod tidy`  
 ### 运行  
-`fresh`
+`go run main.go`
